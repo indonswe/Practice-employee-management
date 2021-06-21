@@ -8,7 +8,16 @@ public abstract class Employee {
     private double salary;
     private LocalDate dateHired;
 
+    public Employee(int id, String name, double salary, LocalDate dateHired) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.dateHired = dateHired;
+    }
+
     public abstract void calculateSalary();
+
+
 
     public String getName() {
         return name;
