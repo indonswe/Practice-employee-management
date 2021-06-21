@@ -13,18 +13,16 @@ public class SystemDeveloper extends Employee{
     }
 
     public void addCertificate(String certificate){
-        int size = certificates.length;
-        String[] newArray = new String[size+1];
+        String[] newArray = Arrays.copyOf(certificates, certificates.length + 1);//make big array
+        newArray[newArray.length-1] = certificate;//Put the new toDoItem in the bigger array
         certificates = newArray;
-        certificates[size] = certificate;
         calculateSalary();
     }
 
     public void addLanguage(String language){
-        int size = languages.length;
-        String[] newArray = new String[size+1];
+        String[] newArray = Arrays.copyOf(languages, languages.length + 1);//make big array
+        newArray[newArray.length-1] = language;//Put the new toDoItem in the bigger array
         languages = newArray;
-        languages[size] = language;
         calculateSalary();
     }
 
@@ -53,10 +51,10 @@ public class SystemDeveloper extends Employee{
     @Override
     public String toString() {
         return "Id=" + getId() +
-                "Name=" + getName() +
-                "Salary" + getSalary() +
-                "Date of employment" + getDateHired() +
-                "SystemDeveloper{" +
+                " Name=" + getName() +
+                " Salary=" + getSalary() +
+                " Date of employment=" + getDateHired() +
+                " SystemDeveloper{" +
                 "certificates=" + Arrays.toString(certificates) +
                 ", languages=" + Arrays.toString(languages) +
                 '}';
