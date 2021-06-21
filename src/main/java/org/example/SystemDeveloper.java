@@ -48,9 +48,15 @@ public class SystemDeveloper extends Employee{
         this.languages = languages;
     }
 
+
+
     @Override
     public String toString() {
-        return "SystemDeveloper{" +
+        return "Id=" + getId() +
+                "Name=" + getName() +
+                "Salary" + getSalary() +
+                "Date of employment" + getDateHired() +
+                "SystemDeveloper{" +
                 "certificates=" + Arrays.toString(certificates) +
                 ", languages=" + Arrays.toString(languages) +
                 '}';

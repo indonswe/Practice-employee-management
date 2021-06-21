@@ -1,5 +1,6 @@
 package org.example;
 
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 
 /**
@@ -15,6 +16,7 @@ public class App
         systemDeveloper1.addCertificate("Oracle java certification");
         systemDeveloper1.addLanguage("Lua");
 
-        System.out.println(systemDeveloper1.getSalary());
+        System.out.println(systemDeveloper1);
+
     }
 }
