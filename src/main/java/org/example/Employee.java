@@ -2,7 +2,7 @@ package org.example;
 
 import java.time.LocalDate;
 
-public abstract class Employee {
+public class Employee {
     private int id;
     private String name;
     private double salary;
@@ -15,7 +15,9 @@ public abstract class Employee {
         this.dateHired = dateHired;
     }
 
-    public abstract void calculateSalary();
+    public void calculateSalary(){
+
+    }
 
 
 

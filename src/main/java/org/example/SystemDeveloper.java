@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class SystemDeveloper extends Employee{
 
-    private String[] certificates;
-    private String[] languages;
+    private String[] certificates = new String[0];
+    private String[] languages = new String[0];
 
     public SystemDeveloper(int id, String name, double salary, LocalDate dateHired) {
         super(id, name, salary, dateHired);
@@ -14,12 +14,38 @@ public class SystemDeveloper extends Employee{
 
     public void addCertificate(String certificate){
         int size = certificates.length;
-        certificates[size+1] = certificate;
+        String[] newArray = new String[size+1];
+        certificates = newArray;
+        certificates[size] = certificate;
+        calculateSalary();
+    }
+
+    public void addLanguage(String language){
+        int size = languages.length;
+        String[] newArray = new String[size+1];
+        languages = newArray;
+        languages[size] = language;
         calculateSalary();
     }
 
     public void calculateSalary(){
         this.setSalary(25000+((certificates.length)*1000)+((languages.length)*1500));
+    }
+
+    public String[] getCertificates() {
+        return certificates;
+    }
+
+    public void setCertificates(String[] certificates) {
+        this.certificates = certificates;
+    }
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
     }
 
     @Override
